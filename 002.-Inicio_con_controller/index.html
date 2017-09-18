@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Curso de Angular" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hola Mundo Controller</title>
+    <script src="./../lib/angular.js"></script>
+    <script src="./app.js"></script>
+</head>
+<!-- Usamos "data-" delante de la directiva angular, para declararla como atributo local -->
+
+<body ng-app="appMain" ng-controller="AppMainController">
+    <form>
+        <p>
+            <label for="name">Name</label>
+            <input id="name" type="text" ng-model="user.name">
+        </p>
+        <p>
+            <label for="lastname">LastName</label>
+            <input id="lastname" type="text" ng-model="user.lastname">
+        </p>
+        <p>
+            <button ng-click="borrar()">Borrar</button>
+        </p>
+    </form>
+
+
+    <h1>Hola {{user.name}} {{user.lastname}} bienvenido al curso de {{curso}}</h1>
+</body>
+
+</html>
