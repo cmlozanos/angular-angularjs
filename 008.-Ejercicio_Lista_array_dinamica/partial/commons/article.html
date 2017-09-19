@@ -1,0 +1,12 @@
+<article>
+    <form>
+        <p>
+            <label for="provinciaList">Lista Provincias</label>
+            <select id="provinciaList" ng-options="
+                            provincia as provincia.name for 
+                            provincia in $ctrl.provincias 
+                            track by provincia.id" ng-model="$ctrl.provinciaSelected">
+            </select>
+        </p>
+    </form>
+</article>

@@ -1,0 +1,34 @@
+<article>
+    <form>
+        <p>
+            <label for="orderBy">Ordenar por</label>
+            <select id="orderBy" ng-model="$ctrl.orderBy">
+                <option value="nombre">Nombre</option>
+                <option value="apellido">Apellido</option>
+                <option value="pais">Pais</option>
+                <option value="fechaNacim">fechaNacim</option>
+                </select>
+
+        </p>
+        <p>
+            <label for="filterBy">Filtrar por</label>
+            <input id="filterBy" ng-model="$ctrl.filterBy">
+        </p>
+        <p>
+            <label for="showFields">Campos a mostrar</label>
+
+            <label for="showPais">Mostrar Pais</label>
+            <input id="showPais" ng-model="$ctrl.showPais" type="checkbox">
+            <label for="showFecha">Mostrar Fecha</label>
+            <input id="showFecha" ng-model="$ctrl.showFecha" type="checkbox">
+        </p>
+    </form>
+    <p>
+        <h3>Listado</h3>
+        <div ng-repeat="elemento in $ctrl.elementos | filter: $ctrl.filterBy | orderBy: $ctrl.orderBy">
+            Texto #{{$index}}:
+            <b>nombre: {{elemento.nombre}}, apellido: {{elemento.apellido}}</b> , fechaNacim: {{elemento.fechaNacim}}, pais:
+            {{ $ctrl.showPais ? elemento.pais : - }} , generos: {{elemento.generos}}
+        </div>
+    </p>
+</article>
