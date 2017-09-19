@@ -1,0 +1,17 @@
+<article>
+    <form>
+        <p>
+            <label for="texto">Introduzca un texto</label>
+            <input id="texto" ng-model="$ctrl.elemento.texto">
+        </p>
+        <p>
+            <button ng-click="$ctrl.add()">Add</button>
+        </p>
+    </form>
+    <p>
+        <h3>Listado</h3>
+        <div ng-repeat="elemento in $ctrl.elementos track by $index">
+            Texto #{{$index}}: {{elemento.texto}}
+        </div>
+    </p>
+</article>
